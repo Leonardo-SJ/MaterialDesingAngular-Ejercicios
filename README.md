@@ -37,6 +37,7 @@ Configuración personalizable: Puedes controlar el comportamiento del panel, com
 Accesibilidad: Cumple con los estándares de accesibilidad para entradas de texto con sugerencias.
 
 **¿Cuándo usarlo?**
+
 Es una excelente opción para situaciones donde:
 
 Necesitas una entrada de texto libre pero con la ayuda de sugerencias.
@@ -82,6 +83,146 @@ Usa el componente Badge cuando necesites:
 * Mejorar la **experiencia de usuario** guiando la atención a elementos relevantes que requieren acción o visualización.
 
 El Badge de Angular Material es un pequeño pero efectivo componente para agregar información visual concisa y contextual a tu aplicación.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5436a432-2491-4867-9114-09f3c9834d11" />
+
+### Bottom Sheet
+La **Hoja Inferior (Bottom Sheet)** de Angular Material es un componente que abre paneles estilo Material Design en la parte inferior de la pantalla. Están diseñadas principalmente para **dispositivos móviles** como una alternativa a los diálogos y menús tradicionales.
+
+### ¿Cómo funciona?
+
+Se utiliza el servicio `MatBottomSheet` para abrir estos paneles. Puedes abrir una hoja inferior llamando al método `open()`, al que le pasas un componente que se cargará dentro del panel y, opcionalmente, un objeto de configuración.
+
+El método `open()` devuelve una instancia de `MatBottomSheetRef`, que te permite controlar la hoja inferior, como cerrarla o suscribirte a eventos. Es importante saber que **solo se puede abrir una hoja inferior a la vez**.
+
+### Características clave:
+
+* **Paso de datos:** Puedes enviar datos al componente que se carga en la hoja inferior utilizando la propiedad `data` en el objeto de configuración. Estos datos se pueden acceder dentro del componente de la hoja inferior mediante el token de inyección `MAT_BOTTOM_SHEET_DATA`.
+* **Opciones por defecto:** Puedes configurar opciones predeterminadas para todas las hojas inferiores de tu aplicación de manera global usando `MAT_BOTTOM_SHEET_DEFAULT_OPTIONS`.
+* **Accesibilidad:** Este componente implementa el patrón ARIA `role="dialog"`, lo que asegura su accesibilidad. Incluye interacción con el teclado (la tecla 'Escape' la cierra por defecto) y gestión del foco para una mejor experiencia de usuario.
+
+### ¿Cuándo usarlo?
+
+La Hoja Inferior es ideal para:
+
+* Ofrecer una lista de acciones o de opciones de selección en un contexto que no requiere un diálogo completo.
+* Presentar información adicional o controles sin cubrir toda la pantalla, especialmente en dispositivos móviles.
+
+Es una herramienta útil para ofrecer interacciones contextuales y de fácil acceso, optimizadas para experiencias táctiles.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dc96aed0-8ae9-4322-84a4-0cc37caaddd8" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76a65518-0fef-436b-93d3-9c540ee264ee" />
+
+### Button
+El componente **Button (Botón)** de Angular Material es un elemento interactivo esencial que permite a los usuarios realizar acciones y enviar información en tu aplicación. Proporciona una variedad de estilos y funcionalidades predefinidas que siguen las directrices de Material Design.
+
+---
+### ¿Qué es y para qué sirve?
+
+Los botones son la base de la interacción del usuario en una aplicación. Con el componente `mat-button` (o sus variantes), puedes crear botones con diferentes apariencias y comportamientos, como:
+
+* **Acciones primarias:** Iniciar un proceso, enviar un formulario, guardar datos.
+* **Acciones secundarias:** Cancelar una operación, borrar un campo.
+* **Navegación:** Ir a otra página o sección de la aplicación.
+* **Botones con iconos:** Combinar texto con iconos para una mejor comprensión visual.
+
+---
+### Tipos de botones:
+
+Angular Material ofrece varios tipos de botones, cada uno con un propósito y estilo visual distintos:
+
+* **`mat-button` (Botón de texto/plano):** Un botón minimalista, ideal para acciones de baja prominencia o para usar dentro de menús y diálogos. No tiene elevación.
+* **`mat-raised-button` (Botón elevado):** El tipo de botón más común, con una sombra que le da una apariencia "elevada". Se usa para acciones principales que deben destacarse.
+* **`mat-flat-button` (Botón plano con relleno):** Similar al botón elevado, pero con una sombra más sutil y un fondo plano. Ofrece un punto intermedio entre el botón de texto y el elevado.
+* **`mat-stroked-button` (Botón con borde):** Tiene un borde alrededor del texto y un fondo transparente. Útil para acciones secundarias que necesitan ser más visibles que un botón de texto, pero menos que uno elevado.
+* **`mat-icon-button` (Botón de icono):** Diseñado específicamente para contener un icono de Material Design. Es un botón circular sin texto, perfecto para acciones como "eliminar", "editar" o "mostrar/ocultar".
+* **`mat-fab` (Floating Action Button):** Un botón de acción flotante circular grande, que se coloca prominentemente para la acción principal de una pantalla.
+* **`mat-mini-fab` (Mini Floating Action Button):** Una versión más pequeña del `mat-fab`, ideal para acciones relacionadas o contextuales.
+
+---
+### Características clave:
+
+* **Colores temáticos:** Puedes aplicar los colores definidos en tu tema de Angular Material (`primary`, `accent`, `warn`) a los botones para mantener la coherencia visual.
+* **Deshabilitar botones:** Los botones pueden deshabilitarse fácilmente usando la propiedad `[disabled]="true"`, lo que les da una apariencia atenuada y evita interacciones.
+* **Integración con iconos:** Se integran perfectamente con el componente `mat-icon` para crear botones con íconos significativos.
+* **Accesibilidad:** Los botones de Angular Material están construidos pensando en la accesibilidad, asegurando que sean navegables y utilizables por personas con diversas necesidades.
+
+En resumen, el componente Button de Angular Material te brinda la flexibilidad y las herramientas para implementar interacciones de usuario claras y estéticamente agradables en tu aplicación, siguiendo los principios de Material Design.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/11224134-0e42-4ea3-b9d1-9bc01940bd3d" />
+
+### Button toggle
+
+El componente **Button Toggle (Botón de Alternancia)** de Angular Material es un grupo de botones que actúan como interruptores de encendido/apagado, permitiendo al usuario seleccionar una o varias opciones de un conjunto. Es similar a los botones de radio o casillas de verificación, pero con una apariencia de botón.
+
+---
+### ¿Qué es y para qué sirve?
+
+El botón de alternancia se usa para cambiar el estado o la configuración de algo. Puede funcionar de dos maneras principales:
+
+1.  **Selección exclusiva (como botones de radio):** Donde solo se puede seleccionar uno de los botones del grupo a la vez. Al seleccionar un botón, cualquier otro botón previamente seleccionado se deselecciona automáticamente.
+2.  **Selección múltiple (como casillas de verificación):** Donde se pueden seleccionar varios botones dentro del grupo simultáneamente.
+
+Es ideal para interfaces donde quieres que las opciones se vean claramente como botones interactivos, en lugar de los elementos de formulario más tradicionales.
+
+---
+### Características clave:
+
+* **Grupo de botones (`mat-button-toggle-group`):** Los botones individuales (`mat-button-toggle`) siempre se agrupan dentro de un contenedor `mat-button-toggle-group` para gestionar su comportamiento.
+* **Selección exclusiva o múltiple:** Controla el comportamiento del grupo usando la propiedad `[multiple]="true"` en `mat-button-toggle-group` para permitir múltiples selecciones. Por defecto, es de selección exclusiva.
+* **Enlaces a formularios de Angular:** Se integra sin problemas con los formularios reactivos y de plantilla de Angular, lo que permite manejar fácilmente el estado y los valores seleccionados.
+* **Valor (`value`):** Cada `mat-button-toggle` tiene un atributo `value` que representa la opción que selecciona.
+* **Iconos y texto:** Los botones pueden contener texto, iconos o ambos, lo que los hace muy versátiles visualmente.
+* **Accesibilidad:** Los grupos de botones de alternancia de Angular Material están diseñados con accesibilidad en mente, asegurando una navegación y uso adecuados para todos los usuarios.
+
+---
+### ¿Cuándo usarlo?
+
+Utiliza el componente Button Toggle cuando:
+
+* Necesites un conjunto de opciones donde la apariencia de **botón sea más apropiada** que una casilla de verificación o un botón de radio.
+* Quieras alternar entre **estados predefinidos** (por ejemplo, "Activo" / "Inactivo", "Día" / "Semana" / "Mes").
+* Desees que la **interacción sea muy visual** y clara para el usuario.
+
+El Button Toggle de Angular Material ofrece una forma flexible y visualmente atractiva de permitir a los usuarios hacer selecciones o alternar estados dentro de tu aplicación, manteniendo la estética de Material Design.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9c29c631-277e-46e8-9776-e50a890abb0c" />
+### Card
+La **Tarjeta (Card)** de Angular Material es un componente versátil y flexible que se usa para agrupar contenido y acciones relacionadas de una manera visualmente atractiva y fácil de digerir. Imagina que es como un "contenedor de información" que puedes usar para mostrar un producto, un usuario, una publicación de blog o cualquier pieza de contenido que necesite su propio espacio delimitado en la interfaz.
+
+---
+### ¿Qué es y para qué sirve?
+
+El componente `mat-card` sigue las directrices de Material Design y es ideal para:
+
+* **Mostrar información de forma modular:** Permite presentar bloques de contenido de manera independiente, facilitando que el usuario escanee y comprenda la información.
+* **Agrupar elementos relacionados:** Puedes combinar imágenes, texto, enlaces y botones dentro de una tarjeta, manteniendo la cohesión visual de la información.
+* **Crear diseños de tipo "revista" o "noticias":** Son perfectas para cuadrículas de contenido donde cada tarjeta representa un elemento distinto.
+
+---
+### Estructura de una tarjeta:
+
+Una tarjeta de Angular Material se compone de varias secciones opcionales que te permiten estructurar el contenido de manera lógica:
+
+* **`mat-card-header`**: El encabezado de la tarjeta, que a menudo incluye un avatar (`mat-card-avatar`), un título (`mat-card-title`) y un subtítulo (`mat-card-subtitle`).
+* **`mat-card-title`**: El título principal de la tarjeta.
+* **`mat-card-subtitle`**: Un subtítulo para complementar el título.
+* **`mat-card-content`**: La sección principal para el contenido de texto, párrafos o cualquier otro elemento.
+* **`mat-card-actions`**: Un contenedor para botones de acción o enlaces relacionados con el contenido de la tarjeta, generalmente ubicados en la parte inferior.
+* **`mat-card-image`**: Una imagen que se coloca dentro de la tarjeta, típicamente para resaltar el contenido visualmente.
+
+---
+### Características clave:
+
+* **Diseño adaptable:** Las tarjetas son inherentemente responsivas y se adaptan bien a diferentes tamaños de pantalla, lo que las hace adecuadas para diseños móviles y de escritorio.
+* **Sombra y elevación:** Las tarjetas suelen tener una sombra que les da una sensación de elevación en la interfaz, siguiendo el principio de Material Design del "papel" digital.
+* **Flexibilidad de contenido:** Puedes poner prácticamente cualquier elemento HTML o componente Angular dentro de las diferentes secciones de una tarjeta.
+* **Fácil uso:** Su API es sencilla y se integra bien con el resto de los componentes de Angular Material.
+
+El componente Card es un pilar fundamental en el diseño de interfaces con Material Design, ofreciéndote una forma estructurada y visualmente atractiva de presentar información modular y coherente a tus usuarios.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb8791aa-547c-4d86-94d0-181046fd785e" />
 
 ## Andamiaje de código (Code scaffolding)
 
