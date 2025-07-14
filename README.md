@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+github pages
+https://leonardo-sj.github.io/MaterialDesingAngular-Ejercicios/
 # ComponentePrueba
 
 Este proyecto fue generado usando. [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
