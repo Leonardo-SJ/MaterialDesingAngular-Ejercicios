@@ -189,6 +189,7 @@ Utiliza el componente Button Toggle cuando:
 El Button Toggle de Angular Material ofrece una forma flexible y visualmente atractiva de permitir a los usuarios hacer selecciones o alternar estados dentro de tu aplicación, manteniendo la estética de Material Design.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9c29c631-277e-46e8-9776-e50a890abb0c" />
+
 ### Card
 
 La **Tarjeta (Card)** de Angular Material es un componente versátil y flexible que se usa para agrupar contenido y acciones relacionadas de una manera visualmente atractiva y fácil de digerir. Imagina que es como un "contenedor de información" que puedes usar para mostrar un producto, un usuario, una publicación de blog o cualquier pieza de contenido que necesite su propio espacio delimitado en la interfaz.
@@ -477,12 +478,130 @@ El componente Form Field es esencial en Angular Material para construir formular
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fbe32700-5b42-4bfe-81b2-e99a0e183c08" />
 
 ### Icon
+El componente **Icono (Icon)** de Angular Material es una forma sencilla de mostrar iconos SVG o de fuentes (como Material Icons) en tu aplicación, siguiendo las directrices visuales de Material Design. Son elementos gráficos pequeños que se utilizan para representar acciones, conceptos o categorías de forma visual y concisa.
+
+---
+### ¿Qué es y para qué sirve?
+
+El componente `mat-icon` se utiliza para:
+
+* **Comunicación visual:** Reemplazar o complementar texto para transmitir significado de forma rápida y universal (ej., un sobre para "email", una lupa para "buscar").
+* **Ahorro de espacio:** Los iconos son compactos y eficientes para representar información.
+* **Mejorar la usabilidad:** Hacen que las interfaces sean más intuitivas y fáciles de navegar.
+* **Estilo consistente:** Aseguran que todos los iconos en tu aplicación sigan la misma estética de Material Design.
+
+---
+### Tipos de iconos soportados:
+
+Angular Material permite el uso de dos tipos principales de iconos:
+
+1.  **Iconos basados en fuentes (Font Icons):**
+    * Son la forma más común de usar iconos, especialmente con **Google Material Icons**.
+    * Simplemente colocas el nombre del icono como el contenido de la etiqueta `mat-icon` (ej., `<mat-icon>home</mat-icon>`).
+    * Requiere que la fuente de iconos (como la de Material Icons) esté cargada en tu proyecto (generalmente en el `index.html` o a través de CSS).
+
+2.  **Iconos SVG (Scalable Vector Graphics):**
+    * Permiten mayor flexibilidad, ya que puedes usar tus propios gráficos vectoriales personalizados.
+    * Debes "registrar" los iconos SVG con `MatIconRegistry` en tu servicio o módulo (`app.module.ts` o `main.ts` si es `standalone`). Una vez registrados, los puedes usar con el atributo `svgIcon` (ej., `<mat-icon svgIcon="mi-icono-personalizado"></mat-icon>`).
+    * Son ideales para logos o gráficos específicos de tu marca que no están disponibles en las fuentes de iconos.
+
+---
+### Características clave:
+
+* **Colores temáticos:** Puedes aplicar los colores definidos en tu tema de Angular Material (`primary`, `accent`, `warn`) a los iconos, o usar colores personalizados con CSS.
+* **Tamaño:** Por defecto, los iconos tienen un tamaño de 24x24 píxeles, pero puedes cambiarlo fácilmente con CSS.
+* **Accesibilidad:** Los iconos son elementos puramente visuales. Para la accesibilidad, es crucial proporcionar un texto alternativo o una etiqueta ARIA (`aria-label`) cuando el icono represente una acción que no tenga texto explícito (ej., un botón con solo un icono de lápiz para "editar").
+* **Carga diferida:** `MatIconRegistry` puede cargar iconos SVG bajo demanda, optimizando el rendimiento.
+
+El componente Icono de Angular Material es una forma potente y flexible de añadir elementos gráficos consistentes y accesibles a tu aplicación, mejorando su estética y usabilidad al adherirse a las pautas de Material Design.
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8620972-94b5-4ac6-8bce-aa8d12697c56" />
 
 ### Input
+El componente **Input (Entrada de Texto)** de Angular Material es un elemento de formulario básico y fundamental para que los usuarios introduzcan texto, números u otros tipos de datos. No es un componente independiente, sino que funciona como una directiva (`matInput`) que se aplica a un elemento `<input>` o `<textarea>` HTML nativo, integrándolo dentro del contexto de **`mat-form-field`**.
+
+-----
+
+### ¿Qué es y para qué sirve?
+
+La directiva `matInput` se utiliza para:
+
+  * **Dar estilos de Material Design:** Aplica automáticamente la apariencia visual de Material Design a los campos de entrada nativos, como el subrayado animado, los colores del tema y la tipografía.
+  * **Integración con `mat-form-field`:** Su función principal es trabajar en conjunto con el contenedor `mat-form-field` para proporcionar la experiencia completa de un campo de formulario de Material Design, incluyendo la etiqueta flotante (`mat-label`), mensajes de error (`mat-error`) y pistas (`mat-hint`).
+  * **Manejo de tipos de entrada:** Soporta todos los tipos de `input` HTML nativos (como `text`, `password`, `email`, `number`, `date`, etc.), aplicando los estilos de Material Design de manera consistente.
+  * **Textareas (`<textarea>`):** También puede aplicarse a elementos `<textarea>` para crear campos de texto multilínea con el estilo de Material Design.
+
+-----
+
+### ¿Cómo funciona?
+
+Simplemente agregas la directiva `matInput` a tu elemento `input` o `textarea` dentro de un `mat-form-field`:
+
+```html
+<mat-form-field>
+  <mat-label>Tu Correo Electrónico</mat-label>
+  <input matInput type="email" placeholder="ejemplo@dominio.com">
+  <mat-hint>Nunca compartiremos tu correo.</mat-hint>
+  <mat-error *ngIf="emailFormControl.invalid">Ingresa un correo válido</mat-error>
+</mat-form-field>
+```
+
+-----
+
+### Características clave:
+
+  * **Requerimiento de `MatFormFieldModule`:** Dado que `matInput` está diseñado para usarse con `mat-form-field`, necesitas importar `MatFormFieldModule` en tu módulo (`NgModule`) o en los `imports` de tu componente `standalone`.
+  * **Integración con Formularios de Angular:** Funciona perfectamente con los **Formularios Reactivos** y los **Formularios de Plantilla** de Angular, permitiendo validaciones y manejo de estado de forma nativa.
+  * **Comportamiento de la etiqueta:** La etiqueta (`mat-label`) dentro de `mat-form-field` "flota" automáticamente hacia arriba cuando el campo tiene un valor o está en foco.
+  * **Iconos y prefijos/sufijos:** Puedes usar `matPrefix` y `matSuffix` para añadir iconos o texto fijo directamente en el campo de entrada.
+  * **Deshabilitar:** La propiedad `[disabled]="true"` deshabilita el campo de entrada y lo estiliza adecuadamente.
+  * **Accesibilidad:** Proporciona un soporte robusto para la accesibilidad, asegurando que los campos de entrada sean utilizables por todos.
+
+La directiva `matInput` es el puente que convierte tus campos de entrada HTML nativos en elementos de formulario de Material Design, siempre en conjunto con el contenedor `mat-form-field` para una experiencia completa y consistente.
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/83bc245b-813e-405d-9dda-082c8b70791e" />
 
 ### Table
+El componente **Table (Tabla)** de Angular Material es una herramienta potente y flexible para **mostrar datos tabulares** (en formato de filas y columnas) de una manera limpia y organizada que sigue las directrices de Material Design. Es mucho más que una simple tabla HTML; ofrece características avanzadas para manejar y presentar grandes conjuntos de datos.
+
+---
+### ¿Qué es y para qué sirve?
+
+El `mat-table` se utiliza para:
+
+* **Visualizar colecciones de datos:** Es ideal para mostrar listas de usuarios, productos, transacciones, registros de inventario o cualquier información estructurada en filas y columnas.
+* **Presentación de datos compleja:** Va más allá de las tablas HTML básicas al incorporar funcionalidades de Material Design y opciones avanzadas.
+* **Mejorar la experiencia de usuario:** Facilita la lectura, comparación y gestión de datos complejos.
+
+---
+### Características clave:
+
+* **Basada en `DataSource`:** La tabla se alimenta de un `DataSource` (Fuente de Datos) que le dice qué datos mostrar. Esto permite que la tabla sea muy flexible y eficiente, especialmente con grandes volúmenes de datos. Puedes usar un `DataSource` directamente o una simple matriz de objetos.
+* **Encabezados (`mat-header-row`, `mat-header-cell`):** Permite definir los encabezados de las columnas.
+* **Filas de datos (`mat-row`, `mat-cell`):** Define cómo se muestran los datos en cada fila y celda.
+* **Características avanzadas (integración con otros componentes):**
+    * **Paginación:** Se integra perfectamente con `mat-paginator` para dividir grandes conjuntos de datos en páginas manejables.
+    * **Ordenamiento (Sorting):** Funciona con `mat-sort` para permitir a los usuarios ordenar las columnas haciendo clic en sus encabezados.
+    * **Filtrado:** Aunque el componente `mat-table` no incluye una lógica de filtrado incorporada, está diseñado para integrarse fácilmente con componentes de entrada (`mat-form-field`, `matInput`) para implementar funcionalidades de búsqueda y filtrado personalizadas.
+    * **Selección de filas:** Puedes implementar lógicas para seleccionar una o varias filas de la tabla.
+    * **Expandir filas (Expansion Rows):** Permite expandir una fila para mostrar detalles adicionales que no caben en las columnas principales.
+* **Filas y celdas sticky (fijas):** Puedes hacer que los encabezados o las columnas se mantengan "pegados" (sticky) cuando el usuario se desplaza, lo que es útil para tablas grandes.
+* **Diseño flexible:** Aunque sigue las pautas de Material Design, el `mat-table` te da un control significativo sobre cómo se renderiza tu contenido, permitiendo una gran personalización.
+* **Accesibilidad:** Proporciona un soporte robusto de accesibilidad, asegurando que las tablas sean navegables y comprensibles para todos los usuarios.
+
+---
+### ¿Cuándo usarlo?
+
+Utiliza el componente Table cuando necesites:
+
+* Presentar **grandes conjuntos de datos estructurados** que requieren organización clara.
+* Implementar funcionalidades de **paginación, ordenamiento o filtrado**.
+* Necesites una **interfaz de usuario consistente** para la visualización de datos que se adhiera a Material Design.
+
+El componente Table de Angular Material es una solución robusta y altamente configurable para manejar y mostrar datos tabulares complejos de una manera eficiente, interactiva y visualmente atractiva en tu aplicación.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f4d82427-ec8c-4eba-8edb-e4f750d67c32" />
+
 ## Andamiaje de código (Code scaffolding)
 
 Angular CLI incluye potentes herramientas de andamiaje de código. Para generar un nuevo componente, ejecuta:
