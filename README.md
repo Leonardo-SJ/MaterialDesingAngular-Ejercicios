@@ -190,6 +190,7 @@ El Button Toggle de Angular Material ofrece una forma flexible y visualmente atr
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9c29c631-277e-46e8-9776-e50a890abb0c" />
 ### Card
+
 La **Tarjeta (Card)** de Angular Material es un componente versátil y flexible que se usa para agrupar contenido y acciones relacionadas de una manera visualmente atractiva y fácil de digerir. Imagina que es como un "contenedor de información" que puedes usar para mostrar un producto, un usuario, una publicación de blog o cualquier pieza de contenido que necesite su propio espacio delimitado en la interfaz.
 
 ---
