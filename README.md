@@ -225,6 +225,263 @@ El componente Card es un pilar fundamental en el diseño de interfaces con Mater
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb8791aa-547c-4d86-94d0-181046fd785e" />
 
+### Checkbox
+La **Casilla de Verificación (Checkbox)** de Angular Material es un control de interfaz de usuario que permite al usuario **seleccionar o deseleccionar una opción individual**. Es un tipo de entrada booleana: la opción está "activada" (seleccionada) o "desactivada" (deseleccionada).
+
+---
+### ¿Qué es y para qué sirve?
+
+El componente `mat-checkbox` se utiliza para situaciones donde el usuario puede activar o desactivar una característica, una preferencia o un elemento de una lista de forma independiente. A diferencia de los botones de radio, donde solo puedes elegir una opción de un grupo, las casillas de verificación te permiten:
+
+* **Seleccionar múltiples opciones** de una lista (si cada opción tiene su propia casilla).
+* **Activar o desactivar una única característica**.
+
+---
+### Características clave:
+
+* **Estado booleano:** Representa un valor verdadero/falso (true/false) o sí/no.
+* **Estado indeterminado:** Además de "seleccionado" y "deseleccionado", una casilla de verificación puede tener un estado "indeterminado". Esto es útil cuando una casilla "maestra" representa un grupo de sub-casillas: si algunas sub-casillas están seleccionadas y otras no, la casilla maestra puede mostrar un estado indeterminado para indicar que no todas las sub-casillas están ni completamente seleccionadas ni completamente deseleccionadas.
+* **Etiqueta personalizable:** Puedes colocar texto (o incluso otros elementos HTML) al lado de la casilla para describir la opción. La casilla se puede configurar para que la etiqueta aparezca antes o después del cuadro.
+* **Enlaces a formularios de Angular:** Se integra sin problemas con los formularios reactivos y de plantilla de Angular, lo que facilita la gestión de su estado y valor.
+* **Colores temáticos:** Soporta los colores de la paleta de Angular Material (`primary`, `accent`, `warn`).
+* **Deshabilitar casillas:** Puedes deshabilitar una casilla de verificación para evitar la interacción del usuario, lo que la hace aparecer atenuada.
+* **Accesibilidad:** El componente está construido con la accesibilidad en mente, asegurando que se pueda navegar y usar correctamente con tecnologías de asistencia.
+
+---
+### ¿Cuándo usarlo?
+
+Usa el componente Checkbox cuando necesites:
+
+* Permitir que el usuario **seleccione múltiples ítems** de una lista.
+* Ofrecer una opción para **activar o desactivar una configuración** específica.
+* Implementar una casilla **"seleccionar todo"** que tenga un estado indeterminado cuando solo algunos elementos están seleccionados.
+
+La casilla de verificación de Angular Material es un control fundamental para recolectar entradas booleanas o de selección múltiple, manteniendo la coherencia visual y funcional de Material Design.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/783f77be-2547-4564-9e4d-001b6c452086" />
+
+### Chips
+El componente **Chips (Fichas o Píldoras)** de Angular Material son elementos compactos y interactivos que representan una pieza de información compleja, un atributo, una entidad o una acción. Son como "etiquetas" que puedes usar para mostrar selecciones, filtrar contenido, ingresar entradas o activar acciones.
+
+---
+### ¿Qué son y para qué sirven?
+
+Los Chips son altamente versátiles y se utilizan en una variedad de escenarios:
+
+* **Chips de Entrada (Input Chips):** Permiten al usuario ingresar información en un campo, como direcciones de correo electrónico o etiquetas. A medida que el usuario escribe, las entradas se convierten en chips, que a menudo pueden ser removidos.
+* **Chips de Elección (Choice Chips):** Son grupos de chips que permiten una selección única (como botones de radio, pero con apariencia de chip) de un conjunto de opciones.
+* **Chips de Filtro (Filter Chips):** Permiten seleccionar múltiples opciones de un conjunto (como casillas de verificación) para filtrar contenido. Cada chip representa un filtro activo.
+* **Chips de Acción (Action Chips):** Realizan una acción cuando se hace clic en ellos. Son como botones pequeños que contienen una etiqueta y opcionalmente un icono.
+
+---
+### Características clave:
+
+* **Contenido conciso:** Muestran información de forma breve y clara, a menudo con un icono o avatar.
+* **Interactividad:** Pueden ser seleccionables, deseleccionables, removibles o ejecutables (como un botón).
+* **Grupos de Chips (`mat-chip-listbox`, `mat-chip-grid`):** Los chips a menudo se organizan en grupos para gestionar la selección, la navegación o el diseño.
+    * `mat-chip-listbox`: Utilizado para chips de elección o filtro, gestiona la selección de uno o varios chips.
+    * `mat-chip-grid`: Organiza los chips en una cuadrícula, útil para entrada de chips donde el usuario puede añadir o quitar elementos.
+* **Removibles:** Muchos chips tienen un botón de "remover" (usualmente una 'x') que permite al usuario eliminarlos de la interfaz.
+* **Accesibilidad:** Proporcionan un soporte de accesibilidad robusto, incluyendo navegación por teclado y etiquetas ARIA apropiadas.
+* **Personalización:** Puedes personalizar su apariencia, incluyendo colores, iconos y el texto que muestran.
+
+---
+### ¿Cuándo usarlo?
+
+Usa el componente Chips cuando necesites:
+
+* **Visualizar etiquetas o categorías:** Por ejemplo, en un sistema de etiquetado de contenido.
+* **Permitir selección múltiple o única de filtros:** Como filtros en una página de comercio electrónico.
+* **Gestionar entradas de usuario:** Donde el usuario puede añadir múltiples elementos (ej. correos electrónicos, habilidades).
+* **Representar entidades:** Como nombres de personas o temas en un hilo de conversación.
+
+Los Chips de Angular Material son una solución elegante y eficiente para manejar y visualizar información discreta y acciones relacionadas de manera interactiva, siguiendo las pautas de Material Design.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3683ed4a-dccb-4042-a772-f95d66674f4e" />
+
+### Datepicker
+El componente **Datepicker (Selector de Fecha)** de Angular Material es un campo de entrada de texto que, al ser enfocado o al hacer clic en un icono, abre un calendario interactivo. Este calendario permite a los usuarios seleccionar una fecha de manera sencilla y visual.
+
+---
+### ¿Qué es y para qué sirve?
+
+El `mat-datepicker` se utiliza para:
+
+* **Ingresar fechas:** Proporciona una interfaz intuitiva para que los usuarios elijan una fecha específica, como una fecha de nacimiento, una fecha de reserva o una fecha de evento.
+* **Validación de fechas:** Puede configurarse para restringir el rango de fechas seleccionables, por ejemplo, permitiendo solo fechas futuras o fechas dentro de un período específico.
+* **Mejorar la experiencia de usuario:** Ofrece una alternativa más amigable y menos propensa a errores que escribir manualmente una fecha en un formato específico.
+
+---
+### Características clave:
+
+* **Integración con campos de entrada:** Funciona con el componente `matInput` (o un `input` HTML estándar) para mostrar la fecha seleccionada.
+* **Selector de calendario emergente:** El corazón del componente es el calendario que aparece al hacer clic o enfocar el campo de entrada.
+* **Rango de fechas:** Puedes definir fechas mínimas (`min`) y máximas (`max`) para limitar las selecciones del usuario.
+* **Filtrado de fechas:** Permite deshabilitar fechas específicas (por ejemplo, fines de semana o días festivos) utilizando una función de filtro.
+* **Diferentes modos de vista:** El calendario puede mostrar vistas de día, mes o año, permitiendo una navegación rápida.
+* **Soporte de localización (i18n):** Es personalizable para diferentes formatos de fecha, nombres de días/meses y la fecha de inicio de la semana, lo que lo hace adaptable a diversas culturas.
+* **Integración con formularios:** Se integra perfectamente con los **formularios reactivos** y de **plantilla** de Angular, facilitando la recolección y validación de datos de fecha.
+* **Accesibilidad:** El componente está diseñado pensando en la accesibilidad, permitiendo la navegación por teclado y el uso con lectores de pantalla.
+
+---
+### ¿Cuándo usarlo?
+
+Usa el componente Datepicker cuando necesites:
+
+* Recopilar **fechas de eventos, cumpleaños, plazos**, etc.
+* Implementar **filtros de búsqueda basados en fechas**.
+* Restringir la selección de fechas a **rangos específicos**.
+
+El Datepicker de Angular Material es una herramienta robusta y fácil de usar para manejar la entrada de fechas en tu aplicación, ofreciendo una experiencia de usuario consistente con Material Design.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c6a3a691-c082-4896-b173-2df46fe4f9fc" />
+
+### Dialog
+El componente **Dialog (Diálogo)** de Angular Material es una ventana flotante modal que aparece sobre el contenido principal de la aplicación, bloqueando la interacción con el fondo hasta que se realiza una acción o se cierra. Es ideal para situaciones donde necesitas que el usuario se enfoque en una tarea específica o confirme una decisión.
+
+---
+### ¿Qué es y para qué sirve?
+
+El componente `MatDialog` se utiliza para crear ventanas modales para diversos propósitos:
+
+* **Alertas o confirmaciones:** Preguntar al usuario si está seguro de realizar una acción (por ejemplo, "Confirmar eliminación").
+* **Formularios temporales:** Mostrar un formulario pequeño para capturar información adicional sin redirigir al usuario (por ejemplo, "Editar perfil").
+* **Información adicional:** Presentar detalles sobre un elemento sin salir de la vista actual (por ejemplo, "Ver detalles del producto").
+* **Mensajes de error o éxito:** Notificar al usuario sobre el resultado de una operación.
+
+---
+### ¿Cómo funciona?
+
+Los diálogos se abren utilizando el servicio `MatDialog`. Le pasas el **componente de Angular que quieres que se cargue dentro del diálogo** y, opcionalmente, un objeto de configuración.
+
+* El método `open()` devuelve una instancia de `MatDialogRef`, que es una referencia al diálogo abierto. Esta referencia te permite controlar el diálogo, como cerrarlo y pasar datos, o suscribirte a eventos cuando el diálogo se cierra.
+* **Modales:** Por defecto, los diálogos son modales, lo que significa que el usuario no puede interactuar con el contenido detrás del diálogo hasta que este se cierra.
+* **Paso de datos:** Puedes pasar datos al componente del diálogo a través de la propiedad `data` en el objeto de configuración. Dentro del componente del diálogo, se accede a estos datos mediante el token de inyección `MAT_DIALOG_DATA`.
+* **Resultados al cerrar:** Cuando el diálogo se cierra, puedes pasar un valor de retorno, que el componente que abrió el diálogo puede recibir para reaccionar a la acción del usuario.
+
+---
+### Características clave:
+
+* **Flexibilidad de contenido:** Puedes poner cualquier componente de Angular dentro de un diálogo, lo que te da total control sobre su contenido y funcionalidad.
+* **Configuración personalizable:** Ofrece muchas opciones para controlar el comportamiento del diálogo: tamaño (ancho, alto), posición, si se puede cerrar haciendo clic fuera, si se puede cerrar con la tecla Escape, etc.
+* **Animaciones:** Los diálogos incluyen animaciones predefinidas para una transición suave al abrirse y cerrarse.
+* **Accesibilidad:** El componente está construido con un enfoque en la accesibilidad, asegurando que sean navegables por teclado y compatibles con lectores de pantalla.
+
+En resumen, el componente Dialog de Angular Material es una herramienta poderosa y flexible para crear interacciones modales en tu aplicación, permitiéndote controlar el flujo de usuario y la presentación de información importante de manera efectiva y coherente con Material Design.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/feb2cd51-4c9b-45b9-a5b5-c949821db1b6" />
+
+### Divider
+El componente **Divider (Divisor)** de Angular Material es una línea fina que se utiliza para **separar visualmente el contenido** en una lista o en una sección de la interfaz de usuario. Su propósito principal es mejorar la legibilidad y la organización del diseño, creando una clara distinción entre diferentes grupos de elementos.
+
+---
+### ¿Qué es y para qué sirve?
+
+El componente `mat-divider` es una herramienta de diseño sencilla pero efectiva para:
+
+* **Organizar listas:** Es común usarlo en listas (como `mat-list` o `mat-menu`) para separar elementos individuales o grupos de elementos, como opciones de menú, contactos o elementos de configuración.
+* **Segmentar secciones:** Puedes usarlo en cualquier parte de tu UI para crear una separación visual entre bloques de contenido, por ejemplo, entre diferentes secciones de un formulario o entre un encabezado y el contenido principal.
+* **Mejorar la legibilidad:** Al dividir el contenido en bloques manejables, ayuda al usuario a escanear la página más fácilmente y a comprender la estructura de la información.
+
+---
+### Características clave:
+
+* **Orientación:** Por defecto, los divisores son **horizontales**. Puedes hacerlos **verticales** agregando la propiedad `[vertical]="true"`. Esto es útil para separar elementos uno al lado del otro.
+* **Divisores insertados (Inset Dividers):** Los divisores horizontales pueden ser "insertados" (sangrados) usando la propiedad `[inset]="true"`. Esto significa que la línea no se extiende por todo el ancho del contenedor, dejando un pequeño margen al principio. Esto es común en listas de avatares donde la línea no debe pasar por debajo del avatar.
+* **Ligero y simple:** Es un componente muy ligero que solo se encarga de la presentación visual de una línea divisoria, sin añadir complejidad de interactividad.
+* **Estilo Material Design:** Sigue las pautas de diseño de Material Design para asegurar una apariencia y sensación consistentes con el resto de tu aplicación.
+
+---
+### ¿Cuándo usarlo?
+
+Usa el componente Divider cuando necesites:
+
+* Separar elementos en una **lista de opciones o configuraciones**.
+* Delimitar **secciones lógicas** dentro de un panel o un formulario.
+* Mejorar la **jerarquía visual** y la organización de tu interfaz de usuario.
+
+El Divider de Angular Material es un componente discreto pero fundamental para construir interfaces de usuario limpias, organizadas y fáciles de navegar, adhiriéndose a los principios de Material Design.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e902cafb-4d60-4e51-a40c-25dd8dfefe1c" />
+
+### Expansion panel
+El componente **Expansion Panel (Panel de Expansión)** de Angular Material es un contenedor que puede ser **contraído o expandido** para mostrar u ocultar contenido. Es una excelente manera de organizar grandes cantidades de información, permitiendo a los usuarios ver solo lo que necesitan en un momento dado, mejorando así la usabilidad y el orden en la interfaz.
+
+---
+### ¿Qué es y para qué sirve?
+
+El `mat-expansion-panel` se utiliza para:
+
+* **Organizar información jerárquica:** Ideal para preguntas frecuentes (FAQ), detalles de un producto, pasos de un proceso (como un _stepper_ no lineal) o cualquier contenido que pueda agruparse en secciones colapsables.
+* **Ahorrar espacio:** Mantiene la interfaz limpia y concisa al ocultar contenido menos relevante hasta que el usuario decida verlo.
+* **Mejorar la navegación:** Permite a los usuarios expandir solo las secciones que les interesan, reduciendo el _scroll_ excesivo.
+
+---
+### Estructura y comportamiento:
+
+Un panel de expansión generalmente consta de dos partes principales:
+
+1.  **Encabezado (`mat-expansion-panel-header`):** Siempre visible, este es el área en la que el usuario hace clic para alternar el estado del panel (expandir/contraer). Puede contener:
+    * **`mat-panel-title`:** El título principal del panel.
+    * **`mat-panel-description`:** Una descripción o resumen más pequeño.
+2.  **Contenido:** El área que se oculta o se muestra cuando el panel se expande.
+
+Puedes agrupar múltiples paneles de expansión dentro de un **Acordeón (`mat-accordion`)**. En un acordeón, puedes configurar que:
+
+* **Solo un panel** se pueda expandir a la vez (comportamiento predeterminado, como un acordeón musical). Al expandir uno, los demás se contraen.
+* **Múltiples paneles** se puedan expandir simultáneamente.
+
+---
+### Características clave:
+
+* **Control de expansión programático:** Puedes expandir o contraer un panel desde tu código TypeScript, además de la interacción del usuario.
+* **Estado abierto/cerrado:** Los paneles tienen un estado `[expanded]` que puedes vincular a tus datos.
+* **Eventos de cambio:** Emite eventos cuando el panel comienza a expandirse (`(opened)`) o a contraerse (`(closed)`), o cuando su estado de expansión cambia (`(afterExpand)`, `(afterCollapse)`).
+* **Deshabilitar paneles:** Puedes deshabilitar un panel para evitar que el usuario lo expanda o contraiga.
+* **Accesibilidad:** Compatible con la navegación por teclado y tecnologías de asistencia, siguiendo las directrices de ARIA.
+* **Personalización:** Permite personalizar los iconos del encabezado y el estilo general para adaptarse a tu diseño.
+
+El componente Expansion Panel de Angular Material es una forma efectiva y elegante de gestionar la presentación de información segmentada, haciendo que tus interfaces sean más organizadas y fáciles de usar, especialmente cuando manejas mucho contenido.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e42f17c6-3681-4939-9e82-4b5f5d3144f2" />
+
+### Form field
+El componente **Form Field (Campo de Formulario)** de Angular Material es un contenedor que envuelve controles de entrada comunes de Material Design como `input`, `textarea`, `select` y `datepicker`, aplicándoles estilos consistentes, etiquetas flotantes, mensajes de error y sugerencias.
+-----
+
+### ¿Qué es y para qué sirve?
+
+El `mat-form-field` no es un control de entrada en sí mismo, sino un **contenedor visual y funcional** para ellos. Su propósito principal es:
+
+  * **Aplicar estilos uniformes:** Asegura que todos tus campos de entrada tengan la misma apariencia de Material Design.
+  * **Manejar la etiqueta (label):** Permite que la etiqueta del campo flote elegantemente cuando el usuario empieza a escribir o cuando el campo está enfocado.
+  * **Mostrar mensajes de error:** Proporciona un espacio estandarizado para mostrar errores de validación.
+  * **Ofrecer mensajes de sugerencia:** Permite añadir texto de ayuda o sugerencias debajo del campo.
+  * **Iconos y prefijos/sufijos:** Facilita la adición de iconos (como `mat-icon`) o texto fijo antes (prefijo) o después (sufijo) del campo de entrada.
+
+-----
+
+### Características clave:
+
+  * **Tipos de apariencia (Appearance):** Puedes elegir entre diferentes estilos visuales para el campo de formulario, como `fill` (relleno), `outline` (contorno), `standard` (estándar) y `legacy` (legado), para que se adapten a tu diseño.
+  * **Etiquetas flotantes:** Las etiquetas (`mat-label`) se animan y "flotan" sobre el campo cuando este está enfocado o contiene texto, mejorando la usabilidad.
+  * **Mensajes de error y de ayuda:** Los elementos `mat-error` y `mat-hint` proporcionan retroalimentación al usuario. Angular Material se encarga de mostrar los errores automáticamente cuando el control de formulario es inválido y ha sido "tocado" (interactuado por el usuario).
+  * **Prefijos y sufijos:** Puedes añadir iconos o texto fijo al principio (`matPrefix`) o al final (`matSuffix`) del campo de entrada, útil para unidades de medida o iconos de visibilidad de contraseña.
+  * **Encapsulación:** El contenedor gestiona el foco y la interacción entre sus elementos internos, simplificando la creación de formularios consistentes.
+  * **Integración con formularios de Angular:** Se integra de forma nativa con los **Formularios Reactivos** y los **Formularios de Plantilla** de Angular.
+  * **Accesibilidad:** Proporciona atributos ARIA y un manejo de foco robusto para garantizar que los formularios sean accesibles.
+
+El componente Form Field es esencial en Angular Material para construir formularios con una apariencia consistente y una experiencia de usuario mejorada, agrupando los controles de entrada con sus etiquetas, errores y sugerencias de manera estándar y limpia.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fbe32700-5b42-4bfe-81b2-e99a0e183c08" />
+
+### Icon
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8620972-94b5-4ac6-8bce-aa8d12697c56" />
+
+### Input
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/83bc245b-813e-405d-9dda-082c8b70791e" />
+
+### Table
 ## Andamiaje de código (Code scaffolding)
 
 Angular CLI incluye potentes herramientas de andamiaje de código. Para generar un nuevo componente, ejecuta:
